@@ -42,12 +42,12 @@ article {
     gap: 1.5rem;
 }
 
-article.thank-you{
+article.thank-you {
     align-items: center;
     text-align: center;
 }
 
-output{
+output {
     background-color: var(--circle-background);
     color: var(--orange);
     padding: .5em 1.5em;
@@ -74,7 +74,7 @@ label {
     height: 3em;
 }
 
-label:hover {
+input:focus + label, label:hover {
     background-color: var(--orange);
     color: var(--white);
     cursor: pointer;
@@ -89,7 +89,7 @@ button {
     font-variant: small-caps;
 }
 
-button:hover{
+button:hover {
     cursor: pointer;
     background-color: var(--white);
     color: var(--orange);
@@ -103,18 +103,26 @@ form {
 }
 
 input[name="rating"] {
-    display: none;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
 }
 
-input:checked+label{
+input:checked+label {
     background-color: var(--light-grey);
     color: var(--white);
 }
 
-output{
+output {
     color: var(--circle-color);
 }
 
-.hidden{
+.hidden {
     display: none;
 }
