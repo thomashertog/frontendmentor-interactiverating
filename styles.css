@@ -1,0 +1,120 @@
+@font-face {
+    font-family: 'Overpass';
+    src: url('fonts/Overpass-Regular.ttf') format('truetype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Overpass';
+    src: url('fonts/Overpass-Bold.ttf') format('truetype');
+    font-weight: 700;
+}
+
+:root {
+    --orange: hsl(25, 97%, 53%);
+    --white: hsl(0, 0%, 100%);
+    --light-grey: hsl(217, 12%, 63%);
+    --medium-grey: hsl(216, 12%, 54%);
+    --dark-blue: hsl(213, 19%, 18%);
+    --very-dark-blue: hsl(216, 12%, 8%);
+    --circle-background: hsl(213, 19%, 21%);
+    --circle-color: hsl(25, 97%, 65%);
+    font-size: 15px;
+}
+
+body {
+    background-color: var(--very-dark-blue);
+    color: var(--medium-grey);
+    font-family: "Overpass", sans-serif;
+
+    display: grid;
+    place-content: center;
+}
+
+article {
+    background-color: var(--dark-blue);
+    border-radius: 1em;
+    width: min(90vw, 25rem);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1.5rem;
+}
+
+article.thank-you{
+    align-items: center;
+    text-align: center;
+}
+
+output{
+    background-color: var(--circle-background);
+    color: var(--orange);
+    padding: .5em 1.5em;
+    border-radius: 3em;
+}
+
+article h2 {
+    color: var(--white);
+    font-size: 2rem;
+}
+
+:where(.img-container, label) {
+    background-color: var(--circle-background);
+    border-radius: 50%;
+    padding: .5rem;
+}
+
+
+label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
+    height: 3em;
+}
+
+label:hover {
+    background-color: var(--orange);
+    color: var(--white);
+    cursor: pointer;
+}
+
+button {
+    width: 100%;
+    background-color: var(--orange);
+    color: var(--white);
+    border-radius: 1em;
+    border: none;
+    font-variant: small-caps;
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: var(--white);
+    color: var(--orange);
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: space-between;
+}
+
+input[name="rating"] {
+    display: none;
+}
+
+input:checked+label{
+    background-color: var(--light-grey);
+    color: var(--white);
+}
+
+output{
+    color: var(--circle-color);
+}
+
+.hidden{
+    display: none;
+}
